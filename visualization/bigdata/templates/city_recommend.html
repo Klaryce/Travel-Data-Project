@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>近七年旅游数据分析</title>
+    <link href="/static/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/base.css">
+    <link rel="stylesheet" href="/static/css/index.css">
+    <link rel="stylesheet" href="/static/css/my_bootstrap.css">
+
+    <style>
+        .t_title {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 2.5em;
+            line-height: 80px;
+            color: #b77b49;
+        }
+
+        #chart_map {
+            cursor: pointer;
+        }
+
+        .t_show {
+            position: absolute;
+            top: 0;
+            right: 0;
+            border-radius: 2px;
+            background: #2C58A6;
+            padding: 2px 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .data_content .data_main {
+            width: calc(100% - 40px);
+            margin-bottom: 40px;
+            height: 200px;
+            margin-left: 20px;
+        }
+        .data_content .data_main .main_left {
+            width: 24%;
+        }
+        .fl {
+            float: left;
+        }
+        h3 small{
+            color: #b77b49;
+        }
+    </style>
+</head>
+<body>
+<!--navigation-->
+<div class="container">
+        <div class="span6">
+            <ul class="nav nav-tabs" style="margin-left: 50px;">
+                <li><a href="/">主页</a></li>
+                <li class="active dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">旅游城市<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/city_recommend/{{ "三亚" }}">三亚</a></li>
+                        <li><a href="/city_recommend/{{ "成都" }}">成都</a></li>
+                        <li><a href="/city_recommend/{{ "丽江" }}">丽江</a></li>
+                        <li><a href="/city_recommend/{{ "厦门" }}">厦门</a></li>
+                        <li><a href="/city_recommend/{{ "杭州" }}">杭州</a></li>
+                        <li><a href="/city_recommend/{{ "香港" }}">香港</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">旅游伴侣<b class="caret bottom-up"></b></a>
+                    <ul class="dropdown-menu bottom-up pull-right">
+                        <li><a href="/who_recommend/{{ "和朋友" }}">和朋友</a></li>
+                        <li><a href="/who_recommend/{{ "亲子" }}">亲子</a></li>
+                        <li><a href="/who_recommend/{{ "夫妻" }}">夫妻</a></li>
+                        <li><a href="/who_recommend/{{ "一个人" }}">一个人</a></li>
+                        <li><a href="/who_recommend/{{ "情侣" }}">情侣</a></li>
+                        <li><a href="/who_recommend/{{ "和父母" }}">和父母</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+</div>
+<!--header-->
+<div class="header">
+    <div class="bg_header">
+        <div class="header_nav fl t_title">
+            {{ city_info.city }}旅游数据推荐
+        </div>
+        <div class="text-center">
+        （数据来源于携程网游记板块）</div>
+        <div id="city" style="visibility: hidden">{{ city_info.city }}</div>
+    </div>
+</div>
+<br><br>
+<!--main-->
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-5">
+<div id="city_recommend_chart" class="ent_city_count" style="width:80%;height: 400px;"></div>
+</div>
+    <div class="col-md-3" style="margin-top: 50px;">
+<h3 style="margin-left: -100px;"><small>最多人选择在</small><strong> {{ city_info.month }} </strong><small>前往{{ city_info.city }}</small></h3>
+<h3 style="margin-left: -100px;"><small>最多人选择</small><strong> {{ city_info.who }} </strong><small>游玩{{ city_info.city }}</small></h3>
+<h3 style="margin-left: -100px;"><small>最多人选择在{{ city_info.city }}游玩</small><strong> {{ city_info.days }} </strong></h3>
+<h3 style="margin-left: -100px;"><small>人均消费</small><strong> {{ city_info.money }} </strong><small>元</small></h3>
+<h3 style="margin-left: -100px;"><small>最多人在{{ city_info.city }}选择</small><strong> {{ city_info.ent }} </strong><small>的游玩方式</small></h3>
+</div>
+    <div class="col-md-2"></div>
+</div>
+</body>
+<script src="/static/js/jquery-2.2.1.min.js"></script>
+<script src="/static/js/bootstrap.min.js"></script>
+<script src="/static/js/common.js"></script>
+
+
+<script src="/static/js/echarts.min.js"></script>
+<script src="/static/js/dataTool.js"></script>
+<script src="/static/js/china.js"></script>
+<script src="/static/js/tagcanvas.min.js"></script>
+<script src="/static/js/area.js"></script>
+<script src="/static/main/city_recommend.js"></script>
+
+</html>

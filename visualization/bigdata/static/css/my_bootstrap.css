@@ -1,0 +1,29 @@
+.nav-tabs{
+    margin-bottom: 0px;
+    border-radius: 5px;
+    background: #f1d5b5;
+
+}
+.nav-tabs > li > a{
+    color: #e1a973;
+}
+/*.nav-tabs>li >a:visited{*/
+/*    color: aqua;*/
+/*    background-color: #0000ff;*/
+/*}*/
+.nav-tabs > li > a:hover {
+    color: #b77b49;
+    background-color: #f1d5b5;
+}
+.nav-tabs > li.active >a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus{
+    color: #fff;
+    background-color: #bdcdd3;
+}
+.nav > li > a:focus{
+    background-color: #f1d5b5;
+    color: #e1a973;
+}
+
+/*.nav-tabs > li.active > a:hover{*/
+/*    color: #b77b49;*/
+/*}*/
